@@ -1,3 +1,3 @@
  # newclear.rus
 
- Установил Git и README.md
+ Загрузил файлы Modx 2.5.6 для установки.
