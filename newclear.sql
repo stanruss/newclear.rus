@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 03 2017 г., 18:51
+-- Время создания: Апр 04 2017 г., 09:45
 -- Версия сервера: 5.5.53
 -- Версия PHP: 5.5.38
 
@@ -89,7 +89,9 @@ INSERT INTO `new_access_context` (`id`, `target`, `principal_class`, `principal`
 (1, 'web', 'modUserGroup', 0, 9999, 3),
 (2, 'mgr', 'modUserGroup', 1, 0, 2),
 (3, 'web', 'modUserGroup', 1, 0, 2),
-(4, 'mgr', 'modUserGroup', 1, 9999, 13);
+(4, 'mgr', 'modUserGroup', 1, 9999, 13),
+(5, 'web', 'modUserGroup', 3, 9999, 14),
+(6, 'mgr', 'modUserGroup', 3, 9999, 14);
 
 -- --------------------------------------------------------
 
@@ -122,6 +124,15 @@ CREATE TABLE `new_access_media_source` (
   `policy` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `context_key` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `new_access_media_source`
+--
+
+INSERT INTO `new_access_media_source` (`id`, `target`, `principal_class`, `principal`, `authority`, `policy`, `context_key`) VALUES
+(2, '2', 'modUserGroup', 3, 9999, 8, 'mgr'),
+(3, '2', 'modUserGroup', 1, 0, 8, ''),
+(5, '1', 'modUserGroup', 1, 0, 8, '');
 
 -- --------------------------------------------------------
 
@@ -438,7 +449,8 @@ INSERT INTO `new_access_policies` (`id`, `name`, `description`, `parent`, `templ
 (10, 'Developer', 'Context administration policy with most Permissions except Administrator and Security functions.', 0, 0, '', '{\"about\":true,\"change_password\":true,\"change_profile\":true,\"charsets\":true,\"class_map\":true,\"components\":true,\"content_types\":true,\"countries\":true,\"create\":true,\"credits\":true,\"customize_forms\":true,\"dashboards\":true,\"database\":true,\"delete_category\":true,\"delete_chunk\":true,\"delete_context\":true,\"delete_document\":true,\"delete_eventlog\":true,\"delete_plugin\":true,\"delete_propertyset\":true,\"delete_snippet\":true,\"delete_template\":true,\"delete_tv\":true,\"delete_role\":true,\"delete_user\":true,\"directory_chmod\":true,\"directory_create\":true,\"directory_list\":true,\"directory_remove\":true,\"directory_update\":true,\"edit_category\":true,\"edit_chunk\":true,\"edit_context\":true,\"edit_document\":true,\"edit_locked\":true,\"edit_plugin\":true,\"edit_propertyset\":true,\"edit_role\":true,\"edit_snippet\":true,\"edit_template\":true,\"edit_tv\":true,\"edit_user\":true,\"element_tree\":true,\"empty_cache\":true,\"error_log_erase\":true,\"error_log_view\":true,\"export_static\":true,\"file_create\":true,\"file_list\":true,\"file_manager\":true,\"file_remove\":true,\"file_tree\":true,\"file_update\":true,\"file_upload\":true,\"file_unpack\":true,\"file_view\":true,\"frames\":true,\"help\":true,\"home\":true,\"import_static\":true,\"languages\":true,\"lexicons\":true,\"list\":true,\"load\":true,\"logout\":true,\"logs\":true,\"menu_reports\":true,\"menu_site\":true,\"menu_support\":true,\"menu_system\":true,\"menu_tools\":true,\"menu_user\":true,\"menus\":true,\"messages\":true,\"namespaces\":true,\"new_category\":true,\"new_chunk\":true,\"new_context\":true,\"new_document\":true,\"new_static_resource\":true,\"new_symlink\":true,\"new_weblink\":true,\"new_document_in_root\":true,\"new_plugin\":true,\"new_propertyset\":true,\"new_role\":true,\"new_snippet\":true,\"new_template\":true,\"new_tv\":true,\"new_user\":true,\"packages\":true,\"property_sets\":true,\"providers\":true,\"publish_document\":true,\"purge_deleted\":true,\"remove\":true,\"resource_duplicate\":true,\"resource_quick_create\":true,\"resource_quick_update\":true,\"resource_tree\":true,\"save\":true,\"save_category\":true,\"save_chunk\":true,\"save_context\":true,\"save_document\":true,\"save_plugin\":true,\"save_propertyset\":true,\"save_snippet\":true,\"save_template\":true,\"save_tv\":true,\"save_user\":true,\"search\":true,\"settings\":true,\"source_delete\":true,\"source_edit\":true,\"source_save\":true,\"source_view\":true,\"sources\":true,\"tree_show_element_ids\":true,\"tree_show_resource_ids\":true,\"undelete_document\":true,\"unpublish_document\":true,\"unlock_element_properties\":true,\"view\":true,\"view_category\":true,\"view_chunk\":true,\"view_context\":true,\"view_document\":true,\"view_element\":true,\"view_eventlog\":true,\"view_offline\":true,\"view_plugin\":true,\"view_propertyset\":true,\"view_role\":true,\"view_snippet\":true,\"view_sysinfo\":true,\"view_template\":true,\"view_tv\":true,\"view_user\":true,\"view_unpublished\":true,\"workspaces\":true}', 'permissions'),
 (11, 'Context', 'A standard Context policy that you can apply when creating Context ACLs for basic read/write and view_unpublished access within a Context.', 0, 6, '', '{\"load\":true,\"list\":true,\"view\":true,\"save\":true,\"remove\":true,\"copy\":true,\"view_unpublished\":true}', 'permissions'),
 (12, 'Hidden Namespace', 'Hidden Namespace policy, will not show Namespace in lists.', 0, 7, '', '{\"load\":false,\"list\":false,\"view\":true}', 'permissions'),
-(13, 'QuipModeratorPolicy', 'A policy for moderating Quip comments.', 0, 8, '', '{\"quip.comment_approve\":true,\"quip.comment_list\":true,\"quip.comment_list_unapproved\":true,\"quip.comment_remove\":true,\"quip.comment_update\":true,\"quip.thread_list\":true,\"quip.thread_manage\":true,\"quip.thread_remove\":true,\"quip.thread_truncate\":true,\"quip.thread_view\":true,\"quip.thread_update\":true}', 'quip:permissions');
+(13, 'QuipModeratorPolicy', 'A policy for moderating Quip comments.', 0, 8, '', '{\"quip.comment_approve\":true,\"quip.comment_list\":true,\"quip.comment_list_unapproved\":true,\"quip.comment_remove\":true,\"quip.comment_update\":true,\"quip.thread_list\":true,\"quip.thread_manage\":true,\"quip.thread_remove\":true,\"quip.thread_truncate\":true,\"quip.thread_view\":true,\"quip.thread_update\":true}', 'quip:permissions'),
+(14, 'Менеджер', 'Context administration policy with limited, content-editing related Permissions, but no publishing.', 0, 1, '', '{\"about\":false,\"access_permissions\":false,\"actions\":false,\"change_password\":false,\"change_profile\":true,\"charsets\":false,\"class_map\":true,\"components\":false,\"content_types\":false,\"countries\":true,\"create\":false,\"credits\":false,\"customize_forms\":false,\"dashboards\":false,\"database\":false,\"database_truncate\":false,\"delete_category\":false,\"delete_chunk\":false,\"delete_context\":false,\"delete_document\":true,\"delete_eventlog\":false,\"delete_plugin\":false,\"delete_propertyset\":false,\"delete_role\":false,\"delete_snippet\":false,\"delete_template\":false,\"delete_tv\":false,\"delete_user\":false,\"directory_chmod\":true,\"directory_create\":false,\"directory_list\":false,\"directory_remove\":true,\"directory_update\":true,\"edit_category\":false,\"edit_chunk\":false,\"edit_context\":false,\"edit_document\":true,\"edit_locked\":false,\"edit_plugin\":false,\"edit_propertyset\":false,\"edit_role\":false,\"edit_snippet\":false,\"edit_template\":false,\"edit_tv\":false,\"edit_user\":false,\"element_tree\":false,\"empty_cache\":false,\"error_log_erase\":false,\"error_log_view\":false,\"events\":false,\"export_static\":false,\"file_create\":true,\"file_list\":true,\"file_manager\":true,\"file_remove\":true,\"file_tree\":true,\"file_unpack\":false,\"file_update\":true,\"file_upload\":true,\"file_view\":true,\"flush_sessions\":false,\"frames\":true,\"help\":true,\"home\":true,\"import_static\":false,\"languages\":false,\"lexicons\":false,\"list\":true,\"load\":true,\"logout\":true,\"logs\":false,\"menus\":false,\"menu_reports\":true,\"menu_security\":false,\"menu_site\":true,\"menu_support\":true,\"menu_system\":false,\"menu_tools\":true,\"menu_user\":true,\"messages\":false,\"namespaces\":false,\"new_category\":false,\"new_chunk\":false,\"new_context\":false,\"new_document\":true,\"new_document_in_root\":false,\"new_plugin\":false,\"new_propertyset\":false,\"new_role\":false,\"new_snippet\":false,\"new_static_resource\":false,\"new_symlink\":false,\"new_template\":false,\"new_tv\":false,\"new_user\":false,\"new_weblink\":false,\"packages\":true,\"policy_delete\":false,\"policy_edit\":false,\"policy_new\":false,\"policy_save\":false,\"policy_template_delete\":false,\"policy_template_edit\":false,\"policy_template_new\":false,\"policy_template_save\":false,\"policy_template_view\":false,\"policy_view\":false,\"property_sets\":false,\"providers\":false,\"publish_document\":false,\"purge_deleted\":false,\"remove\":false,\"remove_locks\":false,\"resourcegroup_delete\":false,\"resourcegroup_edit\":false,\"resourcegroup_new\":false,\"resourcegroup_resource_edit\":false,\"resourcegroup_resource_list\":false,\"resourcegroup_save\":false,\"resourcegroup_view\":false,\"resource_duplicate\":true,\"resource_quick_create\":false,\"resource_quick_update\":false,\"resource_tree\":true,\"save\":false,\"save_category\":false,\"save_chunk\":false,\"save_context\":false,\"save_document\":true,\"save_plugin\":false,\"save_propertyset\":false,\"save_role\":false,\"save_snippet\":false,\"save_template\":false,\"save_tv\":false,\"save_user\":false,\"search\":true,\"settings\":false,\"sources\":false,\"source_delete\":false,\"source_edit\":false,\"source_save\":false,\"source_view\":true,\"steal_locks\":false,\"tree_show_element_ids\":false,\"tree_show_resource_ids\":true,\"undelete_document\":false,\"unlock_element_properties\":false,\"unpublish_document\":false,\"usergroup_delete\":false,\"usergroup_edit\":false,\"usergroup_new\":false,\"usergroup_save\":false,\"usergroup_user_edit\":false,\"usergroup_user_list\":false,\"usergroup_view\":false,\"view\":true,\"view_category\":false,\"view_chunk\":false,\"view_context\":false,\"view_document\":true,\"view_element\":false,\"view_eventlog\":false,\"view_offline\":false,\"view_plugin\":false,\"view_propertyset\":false,\"view_role\":false,\"view_snippet\":false,\"view_sysinfo\":false,\"view_template\":false,\"view_tv\":false,\"view_unpublished\":false,\"view_user\":false,\"workspaces\":false}', 'permissions');
 
 -- --------------------------------------------------------
 
@@ -523,6 +535,15 @@ CREATE TABLE `new_access_resource_groups` (
   `policy` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `context_key` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `new_access_resource_groups`
+--
+
+INSERT INTO `new_access_resource_groups` (`id`, `target`, `principal_class`, `principal`, `authority`, `policy`, `context_key`) VALUES
+(1, '1', 'modUserGroup', 2, 9999, 4, 'web'),
+(2, '2', 'modUserGroup', 1, 9999, 1, 'web'),
+(3, '2', 'modUserGroup', 1, 9999, 1, 'mgr');
 
 -- --------------------------------------------------------
 
@@ -1178,6 +1199,14 @@ CREATE TABLE `new_documentgroup_names` (
   `private_webgroup` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `new_documentgroup_names`
+--
+
+INSERT INTO `new_documentgroup_names` (`id`, `name`, `private_memgroup`, `private_webgroup`) VALUES
+(1, 'Пользователь', 0, 0),
+(2, 'Администратор', 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -1189,6 +1218,18 @@ CREATE TABLE `new_document_groups` (
   `document_group` int(10) NOT NULL DEFAULT '0',
   `document` int(10) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `new_document_groups`
+--
+
+INSERT INTO `new_document_groups` (`id`, `document_group`, `document`) VALUES
+(1, 2, 12),
+(2, 2, 11),
+(3, 2, 10),
+(4, 2, 9),
+(5, 2, 8),
+(6, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -1456,7 +1497,47 @@ INSERT INTO `new_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, `
 (58, 1, '2017-04-03 18:46:16', 'template_update', 'modTemplate', '7'),
 (59, 1, '2017-04-03 18:46:16', 'propertyset_update_from_element', 'modTemplate', '7'),
 (60, 1, '2017-04-03 18:47:50', 'template_update', 'modTemplate', '7'),
-(61, 1, '2017-04-03 18:47:50', 'propertyset_update_from_element', 'modTemplate', '7');
+(61, 1, '2017-04-03 18:47:50', 'propertyset_update_from_element', 'modTemplate', '7'),
+(62, 1, '2017-04-04 08:38:55', 'login', 'modContext', 'mgr'),
+(63, 1, '2017-04-04 08:39:20', 'user_delete', 'modUser', '2'),
+(64, 1, '2017-04-04 08:41:28', 'resource_group_create', 'modResourceGroup', '1'),
+(65, 1, '2017-04-04 08:43:52', 'access_rgroup_update', 'modAccessResourceGroup', '1'),
+(66, 1, '2017-04-04 08:45:18', 'user_group_update', 'modUserGroup', '2'),
+(67, 1, '2017-04-04 08:49:16', 'policy_duplicate', 'modAccessPolicy', '14'),
+(68, 1, '2017-04-04 08:58:44', 'policy_update', 'modAccessPolicy', '14'),
+(69, 1, '2017-04-04 09:00:55', 'user_group_create', 'modUserGroup', '3'),
+(70, 1, '2017-04-04 09:02:27', 'access_context_update', 'modAccessContext', '5'),
+(71, 1, '2017-04-04 09:02:50', 'access_context_update', 'modAccessContext', '6'),
+(72, 1, '2017-04-04 09:02:54', 'user_group_update', 'modUserGroup', '3'),
+(73, 1, '2017-04-04 09:08:40', 'user_create', 'modUser', '3'),
+(74, 1, '2017-04-04 09:09:00', 'user_update', 'modUser', '3'),
+(75, 3, '2017-04-04 09:10:36', 'login', 'modContext', 'mgr'),
+(76, 1, '2017-04-04 09:12:14', 'login', 'modContext', 'mgr'),
+(77, 1, '2017-04-04 09:12:45', 'source_duplicate', 'sources.modMediaSource', '2'),
+(78, 1, '2017-04-04 09:14:05', 'directory_create', '', 'C:/OpenServer/domains/newclear.rus/assets/Images'),
+(79, 1, '2017-04-04 09:15:38', 'source_update', 'sources.modMediaSource', '2'),
+(80, 1, '2017-04-04 09:16:42', 'source_update', 'sources.modMediaSource', '2'),
+(81, 1, '2017-04-04 09:18:16', 'source_create', 'sources.modAccessMediaSource', '1'),
+(82, 3, '2017-04-04 09:18:54', 'login', 'modContext', 'mgr'),
+(83, 1, '2017-04-04 09:20:50', 'login', 'modContext', 'mgr'),
+(84, 1, '2017-04-04 09:23:05', 'source_update', 'sources.modMediaSource', '2'),
+(85, 3, '2017-04-04 09:23:29', 'login', 'modContext', 'mgr'),
+(86, 1, '2017-04-04 09:23:59', 'login', 'modContext', 'mgr'),
+(87, 3, '2017-04-04 09:24:15', 'login', 'modContext', 'mgr'),
+(88, 1, '2017-04-04 09:25:11', 'login', 'modContext', 'mgr'),
+(89, 1, '2017-04-04 09:25:44', 'source_update', 'sources.modMediaSource', '1'),
+(90, 1, '2017-04-04 09:25:57', 'source_update', 'sources.modMediaSource', '1'),
+(91, 3, '2017-04-04 09:26:18', 'login', 'modContext', 'mgr'),
+(92, 1, '2017-04-04 09:28:00', 'login', 'modContext', 'mgr'),
+(93, 1, '2017-04-04 09:29:21', 'resource_group_create', 'modResourceGroup', '2'),
+(94, 1, '2017-04-04 09:29:52', 'resource_group_resource_create', 'modResourceGroupResource', '1'),
+(95, 1, '2017-04-04 09:29:57', 'resource_group_resource_create', 'modResourceGroupResource', '2'),
+(96, 1, '2017-04-04 09:30:02', 'resource_group_resource_create', 'modResourceGroupResource', '3'),
+(97, 1, '2017-04-04 09:30:10', 'resource_group_resource_create', 'modResourceGroupResource', '4'),
+(98, 1, '2017-04-04 09:30:14', 'resource_group_resource_create', 'modResourceGroupResource', '5'),
+(99, 1, '2017-04-04 09:30:33', 'resource_group_resource_create', 'modResourceGroupResource', '6'),
+(100, 3, '2017-04-04 09:31:17', 'login', 'modContext', 'mgr'),
+(101, 1, '2017-04-04 09:32:21', 'login', 'modContext', 'mgr');
 
 -- --------------------------------------------------------
 
@@ -1478,7 +1559,8 @@ CREATE TABLE `new_media_sources` (
 --
 
 INSERT INTO `new_media_sources` (`id`, `name`, `description`, `class_key`, `properties`, `is_stream`) VALUES
-(1, 'Filesystem', '', 'sources.modFileMediaSource', 'a:0:{}', 1);
+(1, 'Filesystem', '', 'sources.modFileMediaSource', 'a:0:{}', 1),
+(2, 'Content folder', '', 'sources.modFileMediaSource', 'a:2:{s:8:\"basePath\";a:6:{s:4:\"name\";s:8:\"basePath\";s:4:\"desc\";s:23:\"prop_file.basePath_desc\";s:4:\"type\";s:9:\"textfield\";s:7:\"options\";a:0:{}s:5:\"value\";s:14:\"assets/Images/\";s:7:\"lexicon\";s:11:\"core:source\";}s:7:\"baseUrl\";a:6:{s:4:\"name\";s:7:\"baseUrl\";s:4:\"desc\";s:22:\"prop_file.baseUrl_desc\";s:4:\"type\";s:9:\"textfield\";s:7:\"options\";a:0:{}s:5:\"value\";s:14:\"assets/Images/\";s:7:\"lexicon\";s:11:\"core:source\";}}', 1);
 
 -- --------------------------------------------------------
 
@@ -1524,7 +1606,9 @@ CREATE TABLE `new_membergroup_names` (
 --
 
 INSERT INTO `new_membergroup_names` (`id`, `name`, `description`, `parent`, `rank`, `dashboard`) VALUES
-(1, 'Administrator', NULL, 0, 0, 1);
+(1, 'Administrator', NULL, 0, 0, 1),
+(2, 'Пользователь', '', 0, 0, 1),
+(3, 'Контент Менеджеры', '', 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1545,7 +1629,8 @@ CREATE TABLE `new_member_groups` (
 --
 
 INSERT INTO `new_member_groups` (`id`, `user_group`, `member`, `role`, `rank`) VALUES
-(1, 1, 1, 2, 0);
+(1, 1, 1, 2, 0),
+(2, 3, 3, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -1948,7 +2033,7 @@ CREATE TABLE `new_session` (
 --
 
 INSERT INTO `new_session` (`id`, `access`, `data`) VALUES
-('b04okp4m03bidmgqdr9l2mtc12', 1491234582, 'modx.user.contextTokens|a:0:{}');
+('g8hm3q1pa93noi7hdlcm1ea6b3', 1491287659, 'modx.user.contextTokens|a:0:{}');
 
 -- --------------------------------------------------------
 
@@ -3260,8 +3345,8 @@ CREATE TABLE `new_users` (
 --
 
 INSERT INTO `new_users` (`id`, `username`, `password`, `cachepwd`, `class_key`, `active`, `remote_key`, `remote_data`, `hash_class`, `salt`, `primary_group`, `session_stale`, `sudo`, `createdon`) VALUES
-(1, 'stanruss', 'a0rjsHfCSa4PqG4uMK05ljxLWQBNF90qLBq1/wc8rp0=', '', 'modUser', 1, NULL, NULL, 'hashing.modPBKDF2', 'e11dee418dcdd26a342218d7f496bafe', 1, NULL, 1, 1490966703),
-(2, 'stanrusss', 'fNkFc+t13aQ7Oml94q6KSe+CK07pgUyMgCZ6sb0mjp4=', 'EafUdrgknHKHPN5nfO58qcDZEYAeZCdYNoxTCZe1oOI=', 'modUser', 0, NULL, NULL, 'hashing.modPBKDF2', '352f8aea1028030c56c0a4a53923561f', 0, NULL, 0, 1491234531);
+(1, 'stanruss', 'a0rjsHfCSa4PqG4uMK05ljxLWQBNF90qLBq1/wc8rp0=', '', 'modUser', 1, NULL, NULL, 'hashing.modPBKDF2', 'e11dee418dcdd26a342218d7f496bafe', 1, 'a:2:{i:0;s:3:\"mgr\";i:1;s:3:\"web\";}', 1, 1490966703),
+(3, 'Manager', 'FU4viZLSkUwfFwNvr680KG10kmowMJfNAeZ53MLKFvY=', '', 'modUser', 1, NULL, NULL, 'hashing.modPBKDF2', '9d3adc3b1e762773c6b61b6955b43be2', 3, 'a:2:{i:0;s:3:\"mgr\";i:1;s:3:\"web\";}', 0, 1491286120);
 
 -- --------------------------------------------------------
 
@@ -3303,8 +3388,8 @@ CREATE TABLE `new_user_attributes` (
 --
 
 INSERT INTO `new_user_attributes` (`id`, `internalKey`, `fullname`, `email`, `phone`, `mobilephone`, `blocked`, `blockeduntil`, `blockedafter`, `logincount`, `lastlogin`, `thislogin`, `failedlogincount`, `sessionid`, `dob`, `gender`, `address`, `country`, `city`, `state`, `zip`, `fax`, `photo`, `comment`, `website`, `extended`) VALUES
-(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 3, 1490967237, 1491230987, 0, '2a2s3qiss3j3cr4k4sqlgdk8b6', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
-(2, 2, '', 'platonov_stan@mail.ru', '', '', 0, 0, 0, 0, 0, 0, 0, '', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
+(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 10, 1491287280, 1491287541, 0, 'jpc4qclbpjfj7ab3gcd4cubmq3', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
+(3, 3, '', 'platonov_stan@mail.ru', '', '', 0, 0, 0, 6, 1491287178, 1491287477, 0, 'vdahqdjej944o59atjftpujmt0', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
 
 -- --------------------------------------------------------
 
@@ -4255,7 +4340,7 @@ ALTER TABLE `new_access_category`
 -- AUTO_INCREMENT для таблицы `new_access_context`
 --
 ALTER TABLE `new_access_context`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT для таблицы `new_access_elements`
 --
@@ -4265,7 +4350,7 @@ ALTER TABLE `new_access_elements`
 -- AUTO_INCREMENT для таблицы `new_access_media_source`
 --
 ALTER TABLE `new_access_media_source`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT для таблицы `new_access_menus`
 --
@@ -4285,7 +4370,7 @@ ALTER TABLE `new_access_permissions`
 -- AUTO_INCREMENT для таблицы `new_access_policies`
 --
 ALTER TABLE `new_access_policies`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT для таблицы `new_access_policy_templates`
 --
@@ -4305,7 +4390,7 @@ ALTER TABLE `new_access_resources`
 -- AUTO_INCREMENT для таблицы `new_access_resource_groups`
 --
 ALTER TABLE `new_access_resource_groups`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `new_access_templatevars`
 --
@@ -4380,12 +4465,12 @@ ALTER TABLE `new_dashboard_widget`
 -- AUTO_INCREMENT для таблицы `new_documentgroup_names`
 --
 ALTER TABLE `new_documentgroup_names`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `new_document_groups`
 --
 ALTER TABLE `new_document_groups`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT для таблицы `new_extension_packages`
 --
@@ -4440,22 +4525,22 @@ ALTER TABLE `new_lexicon_entries`
 -- AUTO_INCREMENT для таблицы `new_manager_log`
 --
 ALTER TABLE `new_manager_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 --
 -- AUTO_INCREMENT для таблицы `new_media_sources`
 --
 ALTER TABLE `new_media_sources`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `new_membergroup_names`
 --
 ALTER TABLE `new_membergroup_names`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `new_member_groups`
 --
 ALTER TABLE `new_member_groups`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `new_migx_configs`
 --
@@ -4570,12 +4655,12 @@ ALTER TABLE `new_transport_providers`
 -- AUTO_INCREMENT для таблицы `new_users`
 --
 ALTER TABLE `new_users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `new_user_attributes`
 --
 ALTER TABLE `new_user_attributes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `new_user_group_roles`
 --
