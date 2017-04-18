@@ -15,30 +15,9 @@ var gulp           = require('gulp'),
 
 // Скрипты проекта
 
-gulp.task('common-js', function() {
-	return gulp.src([
-		'assets/templates/Stas/app/js/common.js',
-		])
-	.pipe(concat('common.min.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest('assets/templates/Stas/app/js'));
-});
 
-gulp.task('scripts', ['common-js'], function() {
-	return gulp.src([
-		'assets/templates/Stas/app/libs/jquery/dist/jquery.min.js',
-		// 'assets/templates/Stas/app/libs/mmenu/js/jquery.mmenu.all.min.js',
-		// 'assets/templates/Stas/app/libs/owl.carousel/owl.carousel.min.js',
-		// 'assets/templates/Stas/app/libs/fotorama/fotorama.js',
-		// 'assets/templates/Stas/app/libs/selectize/js/standalone/selectize.min.js',
-		// 'assets/templates/Stas/app/libs/equalHeights/equalheights.js',
-		'assets/templates/Stas/app/js/common.min.js', // Всегда в конце
-		])
-	.pipe(concat('scripts.min.js'))
-	// .pipe(uglify()) // Минимизировать весь js (на выбор)
-	.pipe(gulp.dest('assets/templates/Stas/app/js'))
-	.pipe(browserSync.reload({stream: true}));
-});
+
+
 
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -57,7 +36,7 @@ gulp.task('sass', function() {
 	.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('watch', ['sass', 'scripts', 'browser-sync'], function() {
+gulp.task('watch', ['sass', 'browser-sync'], function() {
 	gulp.watch('assets/templates/Stas/app/sass/**/*.sass', ['sass']);
 	gulp.watch(['assets/templates/Stas/libs/**/*.js', 'app/js/common.js'], ['scripts']);
 	gulp.watch('assets/templates/Stas/app/*.php', browserSync.reload);
@@ -69,7 +48,7 @@ gulp.task('imagemin', function() {
 	.pipe(gulp.dest('assets/templates/Stas/dist/img')); 
 });
 
-gulp.task('build', ['removedist', 'imagemin', 'sass', 'scripts'], function() {
+gulp.task('build', ['removedist', 'imagemin', 'sass'], function() {
 
 	var buildFiles = gulp.src([
 		'assets/templates/Stas/app/*.php',
