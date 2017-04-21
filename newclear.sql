@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 21 2017 г., 17:54
+-- Время создания: Апр 21 2017 г., 18:50
 -- Версия сервера: 5.5.53
 -- Версия PHP: 5.5.38
 
@@ -1665,7 +1665,14 @@ INSERT INTO `new_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, `
 (223, 1, '2017-04-21 15:45:15', 'propertyset_update_from_element', 'modChunk', '23'),
 (224, 1, '2017-04-21 15:45:51', 'chunk_create', 'modChunk', '24'),
 (225, 1, '2017-04-21 15:46:31', 'chunk_update', 'modChunk', '24'),
-(226, 1, '2017-04-21 15:46:31', 'propertyset_update_from_element', 'modChunk', '24');
+(226, 1, '2017-04-21 15:46:31', 'propertyset_update_from_element', 'modChunk', '24'),
+(227, 1, '2017-04-21 18:04:02', 'login', 'modContext', 'mgr'),
+(228, 1, '2017-04-21 18:13:41', 'setting_update', 'modSystemSetting', 'forgot_login_email'),
+(229, 1, '2017-04-21 18:15:42', 'setting_update', 'modSystemSetting', 'forgot_login_email'),
+(230, 1, '2017-04-21 18:39:39', 'setting_update', 'modSystemSetting', 'signupemail_message'),
+(231, 1, '2017-04-21 18:44:15', 'setting_update', 'modSystemSetting', 'webpwdreminder_message'),
+(232, 1, '2017-04-21 18:46:56', 'setting_update', 'modSystemSetting', 'websignupemail_message'),
+(233, 1, '2017-04-21 18:48:49', 'setting_update', 'modSystemSetting', 'emailsubject');
 
 -- --------------------------------------------------------
 
@@ -2161,16 +2168,7 @@ CREATE TABLE `new_session` (
 --
 
 INSERT INTO `new_session` (`id`, `access`, `data`) VALUES
-('9vvrjj9ov5fkgl23qa67a1t433', 1492530648, 'modx.user.contextTokens|a:1:{s:3:\"mgr\";i:1;}modx.mgr.user.token|s:52:\"modx58de58ab522034.60981441_158f635d5bba029.80238014\";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}'),
-('a5d559ae6bk4qo45nu78f10o74', 1492530844, 'modx.user.contextTokens|a:1:{s:3:\"mgr\";i:1;}modx.mgr.user.token|s:52:\"modx58de58ab522034.60981441_158f63699b803c7.46414843\";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}'),
-('m8aa60tnoripl2cd22o2bq4266', 1492530830, 'modx.user.0.resourceGroups|a:1:{s:3:\"web\";a:0:{}}modx.user.0.attributes|a:1:{s:3:\"web\";a:5:{s:16:\"modAccessContext\";a:1:{s:3:\"web\";a:1:{i:0;a:3:{s:9:\"principal\";i:0;s:9:\"authority\";s:1:\"0\";s:6:\"policy\";a:1:{s:4:\"load\";b:1;}}}}s:22:\"modAccessResourceGroup\";a:0:{}s:17:\"modAccessCategory\";a:0:{}s:28:\"sources.modAccessMediaSource\";a:0:{}s:18:\"modAccessNamespace\";a:0:{}}}modx.user.contextTokens|a:0:{}'),
-('rhpkvfu8j840180asae4tgh7h0', 1492601409, 'modx.user.contextTokens|a:0:{}modx.user.0.resourceGroups|a:1:{s:3:\"web\";a:0:{}}modx.user.0.attributes|a:1:{s:3:\"web\";a:5:{s:16:\"modAccessContext\";a:1:{s:3:\"web\";a:1:{i:0;a:3:{s:9:\"principal\";i:0;s:9:\"authority\";s:1:\"0\";s:6:\"policy\";a:1:{s:4:\"load\";b:1;}}}}s:22:\"modAccessResourceGroup\";a:0:{}s:17:\"modAccessCategory\";a:0:{}s:28:\"sources.modAccessMediaSource\";a:0:{}s:18:\"modAccessNamespace\";a:0:{}}}'),
-('mn68rag8l98lbsou4gpe2v2gi7', 1492601406, 'modx.user.contextTokens|a:0:{}'),
-('c4gar4akjmuvisd2731tbsubv4', 1492601415, 'modx.user.contextTokens|a:1:{s:3:\"mgr\";i:1;}modx.mgr.user.token|s:52:\"modx58de58ab522034.60981441_158f74a41e116c6.74013561\";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}'),
-('bscdjfgs4mtisbhe02k0t8vd85', 1492681122, 'modx.user.contextTokens|a:1:{s:3:\"mgr\";i:1;}modx.mgr.user.token|s:52:\"modx58de58ab522034.60981441_158f8819c485d07.49889333\";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}'),
-('9jie7nv3j7bgtgbtc583tsr6f1', 1492776908, 'modx.user.contextTokens|a:1:{s:3:\"mgr\";i:1;}modx.mgr.user.token|s:52:\"modx58de58ab522034.60981441_158f9f42c2fa093.93661092\";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}newResourceTokens|a:2:{i:0;s:23:\"58f9f76b8247f4.12648929\";i:1;s:23:\"58f9f7cc651dc1.62959292\";}'),
-('cajcgoni99sf7o98rur755bg94', 1492775980, 'modx.user.contextTokens|a:0:{}modx.user.0.resourceGroups|a:1:{s:3:\"web\";a:0:{}}modx.user.0.attributes|a:1:{s:3:\"web\";a:5:{s:16:\"modAccessContext\";a:1:{s:3:\"web\";a:1:{i:0;a:3:{s:9:\"principal\";i:0;s:9:\"authority\";s:1:\"0\";s:6:\"policy\";a:1:{s:4:\"load\";b:1;}}}}s:22:\"modAccessResourceGroup\";a:0:{}s:17:\"modAccessCategory\";a:0:{}s:28:\"sources.modAccessMediaSource\";a:0:{}s:18:\"modAccessNamespace\";a:0:{}}}'),
-('clkv75m8ro8gjok7995fqontu0', 1492777503, 'modx.user.0.resourceGroups|a:1:{s:3:\"web\";a:0:{}}modx.user.0.attributes|a:1:{s:3:\"web\";a:5:{s:16:\"modAccessContext\";a:1:{s:3:\"web\";a:1:{i:0;a:3:{s:9:\"principal\";i:0;s:9:\"authority\";s:1:\"0\";s:6:\"policy\";a:1:{s:4:\"load\";b:1;}}}}s:22:\"modAccessResourceGroup\";a:0:{}s:17:\"modAccessCategory\";a:0:{}s:28:\"sources.modAccessMediaSource\";a:0:{}s:18:\"modAccessNamespace\";a:0:{}}}modx.user.contextTokens|a:0:{}');
+('ialhl1st2v4f9b04tk6vf5qk55', 1492789767, 'modx.user.contextTokens|a:0:{}');
 
 -- --------------------------------------------------------
 
@@ -2926,7 +2924,7 @@ INSERT INTO `new_system_settings` (`key`, `value`, `xtype`, `namespace`, `area`,
 ('editor_css_path', '', 'textfield', 'core', 'editor', NULL),
 ('editor_css_selectors', '', 'textfield', 'core', 'editor', NULL),
 ('emailsender', 'stan19781@gmail.com', 'textfield', 'core', 'authentication', '2017-03-31 13:25:03'),
-('emailsubject', 'Your login details', 'textfield', 'core', 'authentication', NULL),
+('emailsubject', 'Ваши данные для входа', 'textfield', 'core', 'authentication', '2017-04-21 15:48:48'),
 ('enable_dragdrop', '1', 'combo-boolean', 'core', 'manager', NULL),
 ('error_page', '5', 'textfield', 'core', 'site', '2017-04-03 15:04:21'),
 ('failed_login_attempts', '5', 'textfield', 'core', 'authentication', NULL),
@@ -2939,7 +2937,7 @@ INSERT INTO `new_system_settings` (`key`, `value`, `xtype`, `namespace`, `area`,
 ('filemanager_path_relative', '1', 'combo-boolean', 'core', 'file', NULL),
 ('filemanager_url', '', 'textfield', 'core', 'file', NULL),
 ('filemanager_url_relative', '1', 'combo-boolean', 'core', 'file', NULL),
-('forgot_login_email', '<p>Hello [[+username]],</p>\n<p>A request for a password reset has been issued for your MODX user. If you sent this, you may follow this link and use this password to login. If you did not send this request, please ignore this email.</p>\n\n<p>\n    <strong>Activation Link:</strong> [[+url_scheme]][[+http_host]][[+manager_url]]?modahsh=[[+hash]]<br />\n    <strong>Username:</strong> [[+username]]<br />\n    <strong>Password:</strong> [[+password]]<br />\n</p>\n\n<p>After you log into the MODX Manager, you can change your password again, if you wish.</p>\n\n<p>Regards,<br />Site Administrator</p>', 'textarea', 'core', 'authentication', NULL),
+('forgot_login_email', '<p>Здравствуйте [[+username]],</p>\n<p>Запрос на изменение пароля был выпущен для вас, как пользователя MODX. Если вы сделали этот запрос, то вы можете перейти по ссылке ниже и использовать пароль для входа. Если вы не отправляли этот запрос, игнорируйте это письмо.</p>\n\n<p>\n    <strong>Активационная ссылка:</strong> [[+url_scheme]][[+http_host]][[+manager_url]]?modahsh=[[+hash]]<br />\n    <strong>Логин:</strong> [[+username]]<br />\n    <strong>Пароль:</strong> [[+password]]<br />\n</p>\n\n<p>После входа в MODX Manager вы можете изменить пароль, если захотите.</p>\n\n<p>С уважением,<br />Администратор сайта [[+surl]]</p>', 'textarea', 'core', 'authentication', '2017-04-21 15:15:42'),
 ('form_customization_use_all_groups', '', 'combo-boolean', 'core', 'manager', NULL),
 ('forward_merge_excludes', 'type,published,class_key', 'textfield', 'core', 'system', NULL),
 ('friendly_alias_lowercase_only', '1', 'combo-boolean', 'core', 'furls', NULL),
@@ -3054,7 +3052,7 @@ INSERT INTO `new_system_settings` (`key`, `value`, `xtype`, `namespace`, `area`,
 ('set_header', '1', 'combo-boolean', 'core', 'system', NULL),
 ('send_poweredby_header', '0', 'combo-boolean', 'core', 'system', NULL),
 ('show_tv_categories_header', '1', 'combo-boolean', 'core', 'manager', NULL),
-('signupemail_message', '<p>Hello [[+uid]],</p>\n    <p>Here are your login details for the [[+sname]] MODX Manager:</p>\n\n    <p>\n        <strong>Username:</strong> [[+uid]]<br />\n        <strong>Password:</strong> [[+pwd]]<br />\n    </p>\n\n    <p>Once you log into the MODX Manager at [[+surl]], you can change your password.</p>\n\n    <p>Regards,<br />Site Administrator</p>', 'textarea', 'core', 'authentication', NULL),
+('signupemail_message', '<p>Здравствуйте [[+uid]],</p>\n    <p>Вот ваши данные для входа в систему [[+sname]] MODX Manager:</p>\n\n    <p>\n        <strong>Логин:</strong> [[+uid]]<br />\n        <strong>Пароль:</strong> [[+pwd]]<br />\n    </p>\n\n    <p>После входа в диспетчер MODX на странице [[+surl]], Вы можете изменить пароль.</p>\n\n    <p>С уважением,<br />Администратор сайта [[+surl]]</p>', 'textarea', 'core', 'authentication', '2017-04-21 15:39:39'),
 ('site_name', 'Newclear', 'textfield', 'core', 'site', '2017-04-03 15:05:17'),
 ('site_start', '1', 'textfield', 'core', 'site', NULL),
 ('site_status', '1', 'combo-boolean', 'core', 'site', NULL),
@@ -3079,8 +3077,8 @@ INSERT INTO `new_system_settings` (`key`, `value`, `xtype`, `namespace`, `area`,
 ('use_editor', '1', 'combo-boolean', 'core', 'editor', NULL),
 ('use_multibyte', '1', 'combo-boolean', 'core', 'language', '2017-03-31 13:25:03'),
 ('use_weblink_target', '', 'combo-boolean', 'core', 'site', NULL),
-('webpwdreminder_message', '<p>Hello [[+uid]],</p>\n\n    <p>To activate your new password click the following link:</p>\n\n    <p>[[+surl]]</p>\n\n    <p>If successful you can use the following password to login:</p>\n\n    <p><strong>Password:</strong> [[+pwd]]</p>\n\n    <p>If you did not request this email then please ignore it.</p>\n\n    <p>Regards,<br />\n    Site Administrator</p>', 'textarea', 'core', 'authentication', NULL),
-('websignupemail_message', '<p>Hello [[+uid]],</p>\n\n    <p>Here are your login details for [[+sname]]:</p>\n\n    <p><strong>Username:</strong> [[+uid]]<br />\n    <strong>Password:</strong> [[+pwd]]</p>\n\n    <p>Once you log into [[+sname]] at [[+surl]], you can change your password.</p>\n\n    <p>Regards,<br />\n    Site Administrator</p>', 'textarea', 'core', 'authentication', NULL),
+('webpwdreminder_message', '<p>Здравствуйте [[+uid]],</p>\n\n    <p>Для активации вашего нового пароля кликните ссылки внизу:</p>\n\n    <p>[[+surl]]</p>\n\n    <p>В случае успеха вы можете использовать следующий пароль для входа в систему:</p>\n\n    <p><strong>Пароль:</strong> [[+pwd]]</p>\n\n    <p>Если вы не отправляли этот запрос, игнорируйте это письмо.</p>\n\n    <p>С уважением,<br />Администратор сайта [[+surl]]</p>', 'textarea', 'core', 'authentication', '2017-04-21 15:44:14'),
+('websignupemail_message', '<p>Здравствуйте [[+uid]],</p>\n\n    <p>Вот ваши данные для входа в систему для [[+sname]]:</p>\n\n    <p><strong>Логин:</strong> [[+uid]]<br />\n    <strong>Пароль:</strong> [[+pwd]]</p>\n\n    <p>После входа в систему [[+sname]] на [[+surl]], Вы можете изменить пароль.</p>\n\n    <p>С уважением,<br />Администратор сайта [[+surl]]</p>', 'textarea', 'core', 'authentication', '2017-04-21 15:46:55'),
 ('welcome_screen', '', 'combo-boolean', 'core', 'manager', '2017-03-31 13:25:35'),
 ('welcome_screen_url', '//misc.modx.com/revolution/welcome.25.html ', 'textfield', 'core', 'manager', NULL),
 ('welcome_action', 'welcome', 'textfield', 'core', 'manager', NULL),
@@ -3525,7 +3523,7 @@ CREATE TABLE `new_user_attributes` (
 --
 
 INSERT INTO `new_user_attributes` (`id`, `internalKey`, `fullname`, `email`, `phone`, `mobilephone`, `blocked`, `blockeduntil`, `blockedafter`, `logincount`, `lastlogin`, `thislogin`, `failedlogincount`, `sessionid`, `dob`, `gender`, `address`, `country`, `city`, `state`, `zip`, `fax`, `photo`, `comment`, `website`, `extended`) VALUES
-(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 18, 1492681116, 1492775980, 0, '9jie7nv3j7bgtgbtc583tsr6f1', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
+(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 19, 1492775980, 1492787042, 0, 'nbp9ipuj1rujb8t2e5j7pvmup2', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
 (3, 3, '', 'platonov_stan@mail.ru', '', '', 0, 0, 0, 7, 1491287477, 1491302110, 0, 'pinq7vkq5q6r7f8adtj2m64550', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
 
 -- --------------------------------------------------------
@@ -4662,7 +4660,7 @@ ALTER TABLE `new_lexicon_entries`
 -- AUTO_INCREMENT для таблицы `new_manager_log`
 --
 ALTER TABLE `new_manager_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
 --
 -- AUTO_INCREMENT для таблицы `new_media_sources`
 --
