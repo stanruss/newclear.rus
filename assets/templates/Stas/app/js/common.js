@@ -16,5 +16,18 @@ $(function() {
 	}).bind('closed', function () {
 		$('.hamburger').removeClass('is-active');
 	});
+ // Bind to scroll
+    $(window).scroll(function () {
+
+       
+
+        if ($(this).scrollTop() > 10) {
+            $('.my_menu').addClass('fixed animated fadeInDown');
+        } else {
+            $('.my_menu').removeClass('fixed animated fadeInDown');
+        }
+
+        
+    });
 
 	});

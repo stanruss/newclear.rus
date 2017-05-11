@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 21 2017 г., 18:50
+-- Время создания: Май 11 2017 г., 20:31
 -- Версия сервера: 5.5.53
 -- Версия PHP: 5.5.38
 
@@ -946,6 +946,13 @@ CREATE TABLE `new_collection_settings` (
   `template` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `new_collection_settings`
+--
+
+INSERT INTO `new_collection_settings` (`id`, `collection`, `template`) VALUES
+(1, 2, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -1672,7 +1679,103 @@ INSERT INTO `new_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, `
 (230, 1, '2017-04-21 18:39:39', 'setting_update', 'modSystemSetting', 'signupemail_message'),
 (231, 1, '2017-04-21 18:44:15', 'setting_update', 'modSystemSetting', 'webpwdreminder_message'),
 (232, 1, '2017-04-21 18:46:56', 'setting_update', 'modSystemSetting', 'websignupemail_message'),
-(233, 1, '2017-04-21 18:48:49', 'setting_update', 'modSystemSetting', 'emailsubject');
+(233, 1, '2017-04-21 18:48:49', 'setting_update', 'modSystemSetting', 'emailsubject'),
+(234, 1, '2017-04-27 15:29:40', 'login', 'modContext', 'mgr'),
+(235, 1, '2017-05-10 13:53:48', 'login', 'modContext', 'mgr'),
+(236, 1, '2017-05-10 13:55:06', 'chunk_update', 'modChunk', '24'),
+(237, 1, '2017-05-10 13:55:07', 'propertyset_update_from_element', 'modChunk', '24'),
+(238, 1, '2017-05-10 13:55:26', 'chunk_create', 'modChunk', '25'),
+(239, 1, '2017-05-10 13:59:23', 'chunk_update', 'modChunk', '25'),
+(240, 1, '2017-05-10 13:59:24', 'propertyset_update_from_element', 'modChunk', '25'),
+(241, 1, '2017-05-10 13:59:36', 'chunk_update', 'modChunk', '23'),
+(242, 1, '2017-05-10 13:59:39', 'chunk_update', 'modChunk', '25'),
+(243, 1, '2017-05-10 13:59:39', 'propertyset_update_from_element', 'modChunk', '25'),
+(244, 1, '2017-05-10 14:01:43', 'template_update', 'modTemplate', '1'),
+(245, 1, '2017-05-10 14:01:43', 'propertyset_update_from_element', 'modTemplate', '1'),
+(246, 1, '2017-05-10 14:02:50', 'template_update', 'modTemplate', '1'),
+(247, 1, '2017-05-10 14:02:50', 'propertyset_update_from_element', 'modTemplate', '1'),
+(248, 1, '2017-05-10 14:04:49', 'chunk_update', 'modChunk', '23'),
+(249, 1, '2017-05-10 14:04:49', 'propertyset_update_from_element', 'modChunk', '23'),
+(250, 1, '2017-05-10 14:06:11', 'chunk_update', 'modChunk', '23'),
+(251, 1, '2017-05-10 14:06:12', 'propertyset_update_from_element', 'modChunk', '23'),
+(252, 1, '2017-05-10 14:06:25', 'chunk_update', 'modChunk', '24'),
+(253, 1, '2017-05-10 14:06:26', 'propertyset_update_from_element', 'modChunk', '24'),
+(254, 1, '2017-05-10 14:09:22', 'chunk_update', 'modChunk', '24'),
+(255, 1, '2017-05-10 14:09:22', 'propertyset_update_from_element', 'modChunk', '24'),
+(256, 1, '2017-05-10 14:09:27', 'chunk_delete', 'modChunk', '25'),
+(257, 1, '2017-05-10 14:10:07', 'chunk_update', 'modChunk', '23'),
+(258, 1, '2017-05-10 14:10:08', 'propertyset_update_from_element', 'modChunk', '23'),
+(259, 1, '2017-05-10 14:10:31', 'chunk_update', 'modChunk', '23'),
+(260, 1, '2017-05-10 14:10:31', 'propertyset_update_from_element', 'modChunk', '23'),
+(261, 1, '2017-05-10 14:13:51', 'chunk_update', 'modChunk', '23'),
+(262, 1, '2017-05-10 14:13:51', 'propertyset_update_from_element', 'modChunk', '23'),
+(263, 1, '2017-05-10 14:13:57', 'chunk_update', 'modChunk', '23'),
+(264, 1, '2017-05-10 14:13:58', 'propertyset_update_from_element', 'modChunk', '23'),
+(265, 1, '2017-05-10 14:14:56', 'chunk_update', 'modChunk', '23'),
+(266, 1, '2017-05-10 14:14:57', 'propertyset_update_from_element', 'modChunk', '23'),
+(267, 1, '2017-05-10 14:15:09', 'chunk_update', 'modChunk', '23'),
+(268, 1, '2017-05-10 14:15:10', 'propertyset_update_from_element', 'modChunk', '23'),
+(269, 1, '2017-05-10 14:19:00', 'chunk_update', 'modChunk', '23'),
+(270, 1, '2017-05-10 14:19:01', 'propertyset_update_from_element', 'modChunk', '23'),
+(271, 1, '2017-05-10 14:42:29', 'chunk_update', 'modChunk', '23'),
+(272, 1, '2017-05-10 14:42:30', 'propertyset_update_from_element', 'modChunk', '23'),
+(273, 1, '2017-05-10 14:57:56', 'chunk_update', 'modChunk', '23'),
+(274, 1, '2017-05-10 14:57:56', 'propertyset_update_from_element', 'modChunk', '23'),
+(275, 1, '2017-05-10 15:00:19', 'resource_update', 'modResource', '2'),
+(276, 1, '2017-05-10 15:09:15', 'chunk_update', 'modChunk', '23'),
+(277, 1, '2017-05-10 15:09:16', 'propertyset_update_from_element', 'modChunk', '23'),
+(278, 1, '2017-05-10 15:09:42', 'chunk_update', 'modChunk', '23'),
+(279, 1, '2017-05-10 15:09:42', 'propertyset_update_from_element', 'modChunk', '23'),
+(280, 1, '2017-05-10 15:13:48', 'template_update', 'modTemplate', '1'),
+(281, 1, '2017-05-10 15:13:49', 'propertyset_update_from_element', 'modTemplate', '1'),
+(282, 1, '2017-05-10 15:14:48', 'template_update', 'modTemplate', '1'),
+(283, 1, '2017-05-10 15:14:48', 'propertyset_update_from_element', 'modTemplate', '1'),
+(284, 1, '2017-05-10 15:51:32', 'template_update', 'modTemplate', '1'),
+(285, 1, '2017-05-10 15:51:33', 'propertyset_update_from_element', 'modTemplate', '1'),
+(286, 1, '2017-05-10 15:59:16', 'chunk_update', 'modChunk', '23'),
+(287, 1, '2017-05-10 15:59:17', 'propertyset_update_from_element', 'modChunk', '23'),
+(288, 1, '2017-05-10 16:11:07', 'chunk_update', 'modChunk', '23'),
+(289, 1, '2017-05-10 16:11:07', 'propertyset_update_from_element', 'modChunk', '23'),
+(290, 1, '2017-05-10 16:16:24', 'chunk_update', 'modChunk', '23'),
+(291, 1, '2017-05-10 16:16:24', 'propertyset_update_from_element', 'modChunk', '23'),
+(292, 1, '2017-05-10 16:35:07', 'resource_create', 'modDocument', '13'),
+(293, 1, '2017-05-10 16:37:01', 'resource_create', 'modDocument', '14'),
+(294, 1, '2017-05-10 16:37:53', 'resource_create', 'modDocument', '15'),
+(295, 1, '2017-05-10 16:39:33', 'resource_create', 'modDocument', '16'),
+(296, 1, '2017-05-10 16:43:12', 'chunk_update', 'modChunk', '23'),
+(297, 1, '2017-05-10 16:43:12', 'propertyset_update_from_element', 'modChunk', '23'),
+(298, 1, '2017-05-10 16:43:49', 'chunk_update', 'modChunk', '23'),
+(299, 1, '2017-05-10 16:43:49', 'propertyset_update_from_element', 'modChunk', '23'),
+(300, 1, '2017-05-10 16:56:36', 'chunk_update', 'modChunk', '23'),
+(301, 1, '2017-05-10 16:56:36', 'propertyset_update_from_element', 'modChunk', '23'),
+(302, 1, '2017-05-10 16:56:45', 'chunk_update', 'modChunk', '23'),
+(303, 1, '2017-05-10 16:56:46', 'propertyset_update_from_element', 'modChunk', '23'),
+(304, 1, '2017-05-10 16:57:29', 'chunk_update', 'modChunk', '23'),
+(305, 1, '2017-05-10 16:57:29', 'propertyset_update_from_element', 'modChunk', '23'),
+(306, 1, '2017-05-10 16:58:05', 'chunk_update', 'modChunk', '23'),
+(307, 1, '2017-05-10 16:58:06', 'propertyset_update_from_element', 'modChunk', '23'),
+(308, 1, '2017-05-10 16:58:38', 'chunk_update', 'modChunk', '23'),
+(309, 1, '2017-05-10 16:58:38', 'propertyset_update_from_element', 'modChunk', '23'),
+(310, 1, '2017-05-10 16:59:22', 'chunk_update', 'modChunk', '23'),
+(311, 1, '2017-05-10 16:59:22', 'propertyset_update_from_element', 'modChunk', '23'),
+(312, 1, '2017-05-10 17:00:36', 'chunk_update', 'modChunk', '23'),
+(313, 1, '2017-05-10 17:00:36', 'propertyset_update_from_element', 'modChunk', '23'),
+(314, 1, '2017-05-10 17:01:03', 'chunk_update', 'modChunk', '23'),
+(315, 1, '2017-05-10 17:01:03', 'propertyset_update_from_element', 'modChunk', '23'),
+(316, 1, '2017-05-10 17:01:31', 'chunk_update', 'modChunk', '23'),
+(317, 1, '2017-05-10 17:01:32', 'propertyset_update_from_element', 'modChunk', '23'),
+(318, 1, '2017-05-10 17:01:52', 'chunk_update', 'modChunk', '23'),
+(319, 1, '2017-05-10 17:01:53', 'propertyset_update_from_element', 'modChunk', '23'),
+(320, 1, '2017-05-10 17:06:11', 'chunk_update', 'modChunk', '23'),
+(321, 1, '2017-05-10 17:06:12', 'propertyset_update_from_element', 'modChunk', '23'),
+(322, 1, '2017-05-10 17:07:50', 'chunk_update', 'modChunk', '23'),
+(323, 1, '2017-05-10 17:07:51', 'propertyset_update_from_element', 'modChunk', '23'),
+(324, 1, '2017-05-10 17:08:26', 'chunk_update', 'modChunk', '23'),
+(325, 1, '2017-05-10 17:08:27', 'propertyset_update_from_element', 'modChunk', '23'),
+(326, 1, '2017-05-10 17:09:00', 'chunk_update', 'modChunk', '23'),
+(327, 1, '2017-05-10 17:09:00', 'propertyset_update_from_element', 'modChunk', '23'),
+(328, 1, '2017-05-10 17:09:21', 'chunk_update', 'modChunk', '23'),
+(329, 1, '2017-05-10 17:09:22', 'propertyset_update_from_element', 'modChunk', '23');
 
 -- --------------------------------------------------------
 
@@ -2168,7 +2271,10 @@ CREATE TABLE `new_session` (
 --
 
 INSERT INTO `new_session` (`id`, `access`, `data`) VALUES
-('ialhl1st2v4f9b04tk6vf5qk55', 1492789767, 'modx.user.contextTokens|a:0:{}');
+('2mu00a1ltr72lgsmu03c2ujg70', 1494500465, 'modx.user.contextTokens|a:0:{}'),
+('619ii2harhvmt77a326ghj0qm7', 1494523786, 'modx.user.contextTokens|a:0:{}'),
+('d6kts0043r1a127udeutj7gm66', 1494423575, 'modx.user.contextTokens|a:1:{s:3:\"mgr\";i:1;}modx.mgr.user.token|s:52:\"modx58de58ab522034.60981441_15912f13cb5de43.83205339\";modx.mgr.session.cookie.lifetime|i:0;modx.mgr.user.config|a:0:{}newResourceTokens|a:9:{i:0;s:23:\"591300c49ec652.39162053\";i:1;s:23:\"591316ed185ca2.00568720\";i:2;s:23:\"5913170cb0a8b0.30162840\";i:3;s:23:\"5913176f698715.14160734\";i:4;s:23:\"5913177e88bea2.87321562\";i:5;s:23:\"591317a18fd363.98382662\";i:6;s:23:\"591317b28bab10.43646687\";i:7;s:23:\"591317ff8aca59.78454192\";i:8;s:23:\"5913181713fa66.88024427\";}modx.user.1.userGroups|a:1:{i:0;i:1;}'),
+('d8t65lc09q010qv8fg0k4ckfn7', 1494416738, 'modx.user.contextTokens|a:0:{}');
 
 -- --------------------------------------------------------
 
@@ -2228,7 +2334,7 @@ CREATE TABLE `new_site_content` (
 
 INSERT INTO `new_site_content` (`id`, `type`, `contentType`, `pagetitle`, `longtitle`, `description`, `alias`, `link_attributes`, `published`, `pub_date`, `unpub_date`, `parent`, `isfolder`, `introtext`, `content`, `richtext`, `template`, `menuindex`, `searchable`, `cacheable`, `createdby`, `createdon`, `editedby`, `editedon`, `deleted`, `deletedon`, `deletedby`, `publishedon`, `publishedby`, `menutitle`, `donthit`, `privateweb`, `privatemgr`, `content_dispo`, `hidemenu`, `class_key`, `context_key`, `content_type`, `uri`, `uri_override`, `hide_children_in_tree`, `show_in_tree`, `properties`) VALUES
 (1, 'document', 'text/html', 'Главная', '', '', 'index', '', 1, 0, 0, 0, 0, '', '<p>You have successfully installed MODX Revolution&nbsp;[[++settings_version]]!</p>\r\n<p>Now that MODX is installed you can login to the manager to create your templates, manage content and install third party extras to add functionality to your&nbsp;website. </p>\r\n\r\n<h2>New to&nbsp;MODX?</h2>\r\n\r\n<p>Pages on a MODX site are called <a href=\"https://rtfm.modx.com/revolution/2.x/making-sites-with-modx/structuring-your-site/resources\">Resources</a>, and are visible on the left-hand side of the manager in the Resources tab. Resources can be nested under other resources, making it easy to create a tree of resources. There are different types of resources for different use&nbsp;cases.</p>\r\n\r\n<p>Building your website is done through a combination of <b>Templates</b>, <b>Template Variables</b>, <b>Chunks</b>, <b>Snippets</b> and <b>Plugins</b>. Collectively these are known as <b>Elements</b>, and can also be found in the left-hand side of the manager, in the Elements&nbsp;tab.</p>\r\n\r\n<p><a href=\"https://rtfm.modx.com/revolution/2.x/making-sites-with-modx/structuring-your-site/templates\">Templates</a> contain the outer markup of any page. Each resource can only be assigned to a single template at a time. By adding <a href=\"https://rtfm.modx.com/revolution/2.x/making-sites-with-modx/customizing-content/template-variables\">Template Variables</a> to a template, you can add custom fields for any resource using that particular&nbsp;template.</p>\r\n\r\n<p>With <a href=\"https://rtfm.modx.com/revolution/2.x/making-sites-with-modx/structuring-your-site/chunks\">Chunks</a> you can share parts of the markup, such as a header, across different templates. <a href=\"https://rtfm.modx.com/revolution/2.x/making-sites-with-modx/structuring-your-site/using-snippets\">Snippets</a> are pieces of PHP that return dynamic content, such as summaries of other resources or the current date. With snippets, you will often use Chunks to mark up the pieces of content it returns, instead of mixing the PHP and&nbsp;HTML.</p>\r\n\r\n<p>Finally, <a href=\"https://rtfm.modx.com/revolution/2.x/developing-in-modx/basic-development/plugins\">Plugins</a> enable more advanced features by hooking into the extensive events system provided by&nbsp;MODX.</p>\r\n\r\n<p>To learn more about MODX, be sure to check out the <a href=\"https://rtfm.modx.com/revolution/2.x/getting-started\">Getting Started</a> section in the official&nbsp;documentation.</p>\r\n', 1, 1, 0, 1, 1, 1, 1490966703, 1, 1492776923, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'index.html', 0, 0, 1, NULL),
-(2, 'document', 'text/html', 'Blog', '', 'Demo blog container page for Blogit.', 'blog', '', 1, 0, 0, 0, 1, '', '<h1>Blog overview</h1>', 1, 2, 2, 1, 1, 1, 1490968787, 1, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 'CollectionContainer', 'web', 1, 'blog/', 0, 0, 1, NULL),
+(2, 'document', 'text/html', 'Blog', '', 'Demo blog container page for Blogit.', 'blog', '', 0, 0, 0, 0, 1, '', '<h1>Blog overview</h1>', 1, 2, 2, 1, 1, 1, 1490968787, 1, 1494417618, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 1, 'CollectionContainer', 'web', 1, 'blog/', 0, 0, 1, NULL),
 (3, 'document', 'text/html', 'Post 1', '', 'Demo post 1 for the BlogIt extra.', 'post-1', '', 1, 0, 0, 2, 0, 'Demo summary of post 2 for the BlogIt extra.', '<p>Demo content of post 2 for the BlogIt extra.</p>', 1, 3, 0, 1, 1, 1, 1490968787, 1, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'post-1.html', 0, 0, 0, NULL),
 (4, 'document', 'text/html', 'Post 2', '', 'Demo post 2 for the BlogIt extra.', 'post-2', '', 1, 0, 0, 2, 0, 'Demo summary of post 2 for the BlogIt extra.', '<p>Demo content of post 2 for the BlogIt extra.</p>', 1, 3, 1, 1, 1, 1, 1490968787, 1, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'post-2.html', 0, 0, 0, NULL),
 (5, 'document', 'text/html', '404', '', '', '404', '', 1, 0, 0, 0, 0, '', '<p>Содержимое сайта не найдено.</p>', 1, 0, 2, 1, 1, 1, 1491231802, 0, 0, 0, 0, 0, 1491231802, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, '404.html', 0, 0, 1, NULL),
@@ -2238,7 +2344,11 @@ INSERT INTO `new_site_content` (`id`, `type`, `contentType`, `pagetitle`, `longt
 (9, 'document', 'text/html', 'Reset Password Handler', '', '', 'reset-password-handler', '', 1, 0, 0, 0, 0, '', '<p>[[!ResetPassword? &amp;loginResourceId=`1`]]</p>', 1, 0, 6, 1, 1, 1, 1491232811, 0, 0, 0, 0, 0, 1491232811, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'reset-password-handler.html', 0, 0, 1, NULL),
 (10, 'document', 'text/html', 'Регистрация', '', '', 'registration', '', 1, 0, 0, 0, 0, '', '', 1, 5, 7, 1, 1, 1, 1491232958, 1, 1491233276, 0, 0, 0, 1491232920, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'registration.html', 0, 0, 1, NULL),
 (11, 'document', 'text/html', 'Подтверждение регистрации', '', '', 'registration-accese', '', 1, 0, 0, 0, 0, '', '', 1, 6, 8, 1, 1, 1, 1491233640, 1, 1491233925, 0, 0, 0, 1491233640, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'registration-accese.html', 0, 0, 1, NULL),
-(12, 'document', 'text/html', 'Активация регистрации', '', '', 'activation', '', 1, 0, 0, 0, 0, '', '', 1, 7, 9, 1, 1, 1, 1491233985, 1, 1491234330, 0, 0, 0, 1491233940, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'activation.html', 0, 0, 1, NULL);
+(12, 'document', 'text/html', 'Активация регистрации', '', '', 'activation', '', 1, 0, 0, 0, 0, '', '', 1, 7, 9, 1, 1, 1, 1491233985, 1, 1491234330, 0, 0, 0, 1491233940, 1, '', 0, 0, 0, 0, 1, 'modDocument', 'web', 1, 'activation.html', 0, 0, 1, NULL),
+(13, 'document', 'text/html', 'О нас', '', '', 'about-us', '', 1, 0, 0, 0, 0, '', '', 1, 1, 10, 1, 1, 1, 1494423306, 0, 0, 0, 0, 0, 1494423306, 1, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'about-us.html', 0, 0, 1, NULL),
+(14, 'document', 'text/html', 'Программа', '', '', 'programm', '', 1, 0, 0, 0, 0, '', '', 1, 1, 11, 1, 1, 1, 1494423420, 0, 0, 0, 0, 0, 1494423420, 1, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'programm.html', 0, 0, 1, NULL),
+(15, 'document', 'text/html', 'Галлерея', '', '', 'gallery', '', 1, 0, 0, 0, 0, '', '', 1, 1, 12, 1, 1, 1, 1494423472, 0, 0, 0, 0, 0, 1494423472, 1, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'gallery.html', 0, 0, 1, NULL),
+(16, 'document', 'text/html', 'Контакты', '', '', 'contacts', '', 1, 0, 0, 0, 0, '', '', 1, 1, 13, 1, 1, 1, 1494423573, 0, 0, 0, 0, 0, 1494423573, 1, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, 'contacts.html', 0, 0, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -2289,8 +2399,8 @@ INSERT INTO `new_site_htmlsnippets` (`id`, `source`, `property_preprocess`, `nam
 (20, 0, 0, 'lgnExpiredTpl', '', 0, 12, 0, '<p><strong>Password Reset Information</strong></p>\n<p>Your password has already been reset or the link expired. If you need to reset your password again, click <a href=\"#\">here</a>.</p>', 0, 'a:0:{}', 0, ''),
 (21, 1, 0, 'Head', '', 0, 21, 0, '<!DOCTYPE html>\n<html lang=\"ru\">\n\n<head>\n    \n    <base href=\"[[++site_url]]\" />\n	<meta charset=\"[[++modx_charset]]\" />\n\n	<title>[[*longtitle:default=`[[*pagetitle]]`]] - [[++site_url]]</title>\n	<meta name=\"description\" content=\"\">\n\n	<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">\n\n	<meta property=\"og:image\" content=\"path/to/image.jpg\">\n	<link rel=\"shortcut icon\" href=\"[[++assets_url]]templates/Stas/app/img/favicon/favicon.ico\" type=\"image/x-icon\">\n	<link rel=\"apple-touch-icon\" href=\"[[++assets_url]]templates/Stas/app/img/favicon/apple-touch-icon.png\">\n	<link rel=\"apple-touch-icon\" sizes=\"72x72\" href=\"[[++assets_url]]templates/Stas/app/img/favicon/apple-touch-icon-72x72.png\">\n	<link rel=\"apple-touch-icon\" sizes=\"114x114\" href=\"[[++assets_url]]templates/Stas/app/img/favicon/apple-touch-icon-114x114.png\">\n\n	<!-- Chrome, Firefox OS and Opera -->\n	<meta name=\"theme-color\" content=\"#000\">\n	<!-- Windows Phone -->\n	<meta name=\"msapplication-navbutton-color\" content=\"#000\">\n	<!-- iOS Safari -->\n	<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"#000\">\n\n	<!--<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #151515; }</style>-->\n\n</head>', 0, 'a:0:{}', 0, ''),
 (22, 1, 0, 'Scripts', '', 0, 21, 0, '<link rel=\"stylesheet\" href=\"[[++assets_url]]templates/Stas/app/libs/bootstrap-grid/bootstrap-grid.css\">\n<link rel=\"stylesheet\" href=\"[[++assets_url]]templates/Stas/app/libs/fontawesome/font-awesome.min.css\">\n<link rel=\"stylesheet\" href=\"[[++assets_url]]templates/Stas/app/libs/mmenu/css/jquery.mmenu.all.css\">\n<link rel=\"stylesheet\" href=\"[[++assets_url]]templates/Stas/app/libs/css-hamburgers/hamburgers.css\">\n\n<link rel=\"stylesheet\" href=\"[[++assets_url]]templates/Stas/app/css/main.min.css\">\n<script src=\"[[++assets_url]]templates/Stas/app/libs/jquery/dist/jquery.min.js\"></script>\n<script src=\"[[++assets_url]]templates/Stas/app/libs/mmenu/js/jquery.mmenu.all.min.js\"></script>\n<script src=\"[[++assets_url]]templates/Stas/app/js/common.js\"></script>\n', 0, 'a:0:{}', 0, ''),
-(23, 1, 0, 'Header', '', 0, 21, 0, '<div id=\"my-header\">\n			\n			<header class=\"site-header\">\n				\n				<div class=\"top-line\">\n\n					\n\n					\n\n					<a href=\"#my-menu\" class=\"hamburger hamburger--emphatic visible-xs\">\n						<span class=\"hamburger-box\"><span class=\"hamburger-inner\"></span></span>\n					</a>\n					<nav id=\"my-menu\">\n						<ul>\n							<li><a href=\"#\">Парикмахерский сервис</a></li>\n							<li><a href=\"#\">Косметологический сервис</a></li>\n							\n						</ul>\n					</nav>\n					\n				</div>\n\n				\n				\n\n				\n\n			</header>\n\n		</div>', 0, 'a:0:{}', 0, ''),
-(24, 1, 0, 'Content', '', 0, 21, 0, '<nav class=\"my_menu hidden-xs\">\n						<ul class=\"list-unstyled\">\n							<li><a href=\"#\">Парикмахерский сервис</a></li>\n							<li><a href=\"#\">Косметологический сервис</a></li>\n							\n						</ul>\n					</nav>', 0, 'a:0:{}', 0, '');
+(23, 1, 0, 'Header', '', 0, 21, 0, '<div id=\"my-header\">\n			\n			<header class=\"site-header\">\n				\n				<div class=\"top-line\">\n\n					<a href=\"#my-menu\" class=\"hamburger hamburger--emphatic visible-xs\">\n						<span class=\"hamburger-box\"><span class=\"hamburger-inner\"></span></span>\n					</a>\n					<nav id=\"my-menu\">\n						\n								[[Wayfinder?\n						&startId=`0`\n						&level=`1`\n						&outerTpl=`tpl.Wayfinder.outer`\n						&parentRowTpl=`tpl.Wayfinder.row.parent`\n						&innerRowTpl=`tpl.Wayfinder.row.inner`\n						&rowTpl=`tpl.Wayfinder.row`                    \n					]]\n						\n					</nav>\n					\n				</div>\n				<div class=\"t-krug\">\n				    \n				    <center><p>\n				   \n				    \n				    </p>\n				    <div class=\"date\">25.02.2017</div>\n				    </center>\n				    \n				    \n				</div>\n            <div class=\"t-line\">\n                \n				<nav class=\"my_menu hidden-xs\">\n						\n								[[Wayfinder?\n						&startId=`0`\n						&level=`1`\n						&outerTpl=`tpl.Wayfinder.outer`\n						&parentRowTpl=`tpl.Wayfinder.row.parent`\n						&innerRowTpl=`tpl.Wayfinder.row.inner`\n						&rowTpl=`tpl.Wayfinder.row` \n						&outerClass=`list-unstyled`\n					]]\n						\n					</nav>\n			</div>\n			</header>\n\n		</div>\n\n', 0, 'a:0:{}', 0, ''),
+(24, 1, 0, 'Content', '', 0, 21, 0, '', 0, 'a:0:{}', 0, '');
 
 -- --------------------------------------------------------
 
@@ -2553,7 +2663,7 @@ CREATE TABLE `new_site_templates` (
 --
 
 INSERT INTO `new_site_templates` (`id`, `source`, `property_preprocess`, `templatename`, `description`, `editor_type`, `category`, `icon`, `template_type`, `content`, `locked`, `properties`, `static`, `static_file`) VALUES
-(1, 0, 0, 'Начальный шаблон', '', 0, 0, '', 0, '[[$Head]]\n<body>\n    <div id=\"my-page\">\n            \n            \n            [[$Header]]\n        <div id=\"my-content\">\n		    [[$Content]]\n        </div>\n\n		<div id=\"my-footer\">\n			[[$Footer]]\n		</div>\n\n\n    </div>\n[[$Scripts]]\n</body>\n</html>\n', 0, 'a:0:{}', 0, ''),
+(1, 0, 0, 'Начальный шаблон', '', 0, 0, '', 0, '[[$Head]]\n<body>\n    <div id=\"my-page\">\n            \n            \n        <div id=\"my-content\">\n            <div class=\"opa\"></div>\n            <div class=\"container\">\n                <div class=\"row\">\n                    \n                     [[$Header]]\n		    [[$Content]]\n                    \n                </div>\n            </div>\n            \n        </div>\n\n		<div id=\"my-footer\">\n			[[$Footer]]\n		</div>\n\n    \n    </div>\n[[$Scripts]]\n</body>\n</html>\n', 0, 'a:0:{}', 0, ''),
 (2, 0, 0, 'Blogit container', 'Blogit - Created by MPThemes http://mpthemes.com', 0, 7, '', 0, '<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n	<base href=\"[[++site_url]]\" />\r\n        <meta charset=\"[[++modx_charset:lcase]]\" />\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\r\n        <title>[[*longtitle:strip_tags:empty=`[[*pagetitle:strip_tags]]`]] | [[++site_name:strip_tags]]</title>\r\n        <meta name=\"description\" content=\"[[*description:notempty=`[[*description]]`:default=`[[+content:ellipsis=`155`]]`]]\">\r\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n</head>\r\n<body>\r\n	[[*content]]\r\n	<!-- BlogIt - This chunk grabs all children of the resource. -->\r\n	[[$blogit.get_posts]]\r\n	<!-- BlogIt - This chunk grabs all uses Tagger tags used in posts -->\r\n	[[$blogit.taglist]]\r\n</body>\r\n</html>', 0, NULL, 0, ''),
 (3, 0, 0, 'Blogit post', 'Blogit - Created by MPThemes http://mpthemes.com', 0, 7, '', 0, '<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n	<base href=\"[[++site_url]]\" />\r\n        <meta charset=\"[[++modx_charset:lcase]]\" />\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\r\n        <title>[[*longtitle:strip_tags:empty=`[[*pagetitle:strip_tags]]`]] | [[++site_name:strip_tags]]</title>\r\n        <meta name=\"description\" content=\"[[*description:notempty=`[[*description]]`:default=`[[+content:ellipsis=`155`]]`]]\">\r\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n</head>\r\n<body>\r\n	[[blogit.lexicon_load]]\r\n	<p><a href=\"[[~[[*parent]]]]\">[[%blogit.back_to_overview]]</a></p>\r\n	<article>\r\n		<header>\r\n			<h1>[[*longtitle:strip_tags:empty=`[[*pagetitle:strip_tags]]`]]</h1>\r\n		</header>\r\n		[[*blogit.post_main_image:isnot=``:then=`<img src=\"[[*blogit.post_main_image:phpthumbof=`w=[[++blogit.main_image_width]]`]]\" alt=\"[[*blogit.post_main_image_alt]]\">`]]\r\n		[[*content]]\r\n		<footer>\r\n			<small>[[%blogit.published_on]]: <time datetime=\"[[*publishedon:strtotime:date=`%y-%m-%d`]]\">[[*publishedon:strtotime:date=`%b %d %Y`]]</time></small><br>\r\n			<small>[[%blogit.created_by]]: [[*createdby:userinfo=`username`]]</small><br>\r\n			[[++blogit.use_tags:isequalto=`1`:then=`\r\n			<small>Tags: [[!TaggerGetTags? &resources=`[[*id]]` &rowTpl=`blogit.tag_links_tpl` &separator=`, ` &target=`[[++blogit.blog_container_id]]`]]</small>\r\n			`]]\r\n		</footer>\r\n	</article>\r\n</body>\r\n</html>', 0, NULL, 0, ''),
 (4, 1, 0, 'Forgot Password', '', 0, 20, '', 0, '[[$Head]]\n  <body>\n    \n    <section class=\"forgot\">\n      [[!ForgotPassword? &resetResourceId=`9` &tpl=`lgnForgotPassTpl`]]\n    </section>   	\n    [[$Scripts]]\n  </body>\n</html>', 0, 'a:0:{}', 0, ''),
@@ -3523,7 +3633,7 @@ CREATE TABLE `new_user_attributes` (
 --
 
 INSERT INTO `new_user_attributes` (`id`, `internalKey`, `fullname`, `email`, `phone`, `mobilephone`, `blocked`, `blockeduntil`, `blockedafter`, `logincount`, `lastlogin`, `thislogin`, `failedlogincount`, `sessionid`, `dob`, `gender`, `address`, `country`, `city`, `state`, `zip`, `fax`, `photo`, `comment`, `website`, `extended`) VALUES
-(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 19, 1492775980, 1492787042, 0, 'nbp9ipuj1rujb8t2e5j7pvmup2', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
+(1, 1, 'Администратор по умолчанию', 'stan19781@gmail.com', '', '', 0, 0, 0, 21, 1493296180, 1494413628, 0, 'd6kts0043r1a127udeutj7gm66', 0, 0, '', '', '', '', '', '', '', '', '', NULL),
 (3, 3, '', 'platonov_stan@mail.ru', '', '', 0, 0, 0, 7, 1491287477, 1491302110, 0, 'pinq7vkq5q6r7f8adtj2m64550', 0, 0, '', '', '', '', '', '', '', '', '', '[]');
 
 -- --------------------------------------------------------
@@ -4570,7 +4680,7 @@ ALTER TABLE `new_clientconfig_setting`
 -- AUTO_INCREMENT для таблицы `new_collection_settings`
 --
 ALTER TABLE `new_collection_settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT для таблицы `new_collection_templates`
 --
@@ -4660,7 +4770,7 @@ ALTER TABLE `new_lexicon_entries`
 -- AUTO_INCREMENT для таблицы `new_manager_log`
 --
 ALTER TABLE `new_manager_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=330;
 --
 -- AUTO_INCREMENT для таблицы `new_media_sources`
 --
@@ -4730,12 +4840,12 @@ ALTER TABLE `new_register_topics`
 -- AUTO_INCREMENT для таблицы `new_site_content`
 --
 ALTER TABLE `new_site_content`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT для таблицы `new_site_htmlsnippets`
 --
 ALTER TABLE `new_site_htmlsnippets`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT для таблицы `new_site_plugins`
 --
