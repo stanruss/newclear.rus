@@ -1,94 +1,49 @@
-var gulp           = require('gulp'),
-		gutil          = require('gulp-util' ),
-		sass           = require('gulp-sass'),
-		browserSync    = require('browser-sync'),
-		concat         = require('gulp-concat'),
-		uglify         = require('gulp-uglify'),
-		cleanCSS       = require('gulp-clean-css'),
-		rename         = require('gulp-rename'),
-		del            = require('del'),
-		imagemin       = require('gulp-imagemin'),
-		cache          = require('gulp-cache'),
-		autoprefixer   = require('gulp-autoprefixer'),
-		ftp            = require('vinyl-ftp'),
-		notify         = require("gulp-notify");
-
-// Скрипты проекта
-
-
-
-
+var gulp         = require('gulp');
+var	rename       = require('gulp-rename');
+var	postcss      = require('gulp-postcss');
+var	assets       = require('postcss-assets');
+var	nested       = require('postcss-nested');
+var	short        = require('postcss-short');
+var	cssnano      = require('gulp-cssnano');
+var	cssnext      = require('postcss-cssnext');
+var	autoprefixer = require('gulp-autoprefixer');
+var	sass         = require('gulp-sass');
+var notify       = require('gulp-notify');
+var browserSync  = require('browser-sync');
 
 gulp.task('browser-sync', function() {
 	browserSync({
-		proxy: "newclear.rus",
+		proxy: 
+		"bootsrap4.loc",
 		notify: false
+	
 	});
 });
-
 gulp.task('sass', function() {
+		var processors = [
+			short,
+			nested,
+			cssnext,
+			assets({
+				loadPaths: ['assets/templates/Stas/app/'],
+				relativeTo: 'assets/templates/Stas/app/css/'
+			})
+		];
 	return gulp.src('assets/templates/Stas/app/sass/**/*.sass')
 	.pipe(sass().on("error", notify.onError()))
+	.pipe(postcss(processors))
 	.pipe(rename({suffix: '.min', prefix : ''}))
-	.pipe(autoprefixer(['last 15 versions']))
-	.pipe(cleanCSS())
+	.pipe(autoprefixer({
+    browsers: ['last 12 versions'],
+    cascade: false
+    }))
+	.pipe(cssnano())
 	.pipe(gulp.dest('assets/templates/Stas/app/css'))
 	.pipe(browserSync.reload({stream: true}));
 });
-
 gulp.task('watch', ['sass', 'browser-sync'], function() {
 	gulp.watch('assets/templates/Stas/app/sass/**/*.sass', ['sass']);
 	gulp.watch(['assets/templates/Stas/libs/**/*.js', 'app/js/common.js'], ['scripts']);
 	gulp.watch('assets/templates/Stas/app/*.php', browserSync.reload);
 });
-
-gulp.task('imagemin', function() {
-	return gulp.src('assets/templates/Stas/app/img/**/*')
-	.pipe(cache(imagemin()))
-	.pipe(gulp.dest('assets/templates/Stas/dist/img')); 
-});
-
-gulp.task('build', ['removedist', 'imagemin', 'sass'], function() {
-
-	var buildFiles = gulp.src([
-		'assets/templates/Stas/app/*.php',
-		'app/.htaccess',
-		]).pipe(gulp.dest('assets/templates/Stas/dist'));
-
-	var buildCss = gulp.src([
-		'assets/templates/Stas/app/css/main.min.css',
-		]).pipe(gulp.dest('assets/templates/Stas/dist/css'));
-
-	var buildJs = gulp.src([
-		'assets/templates/Stas/app/js/scripts.min.js',
-		]).pipe(gulp.dest('assets/templates/Stas/dist/js'));
-
-	var buildFonts = gulp.src([
-		'assets/templates/Stas/app/fonts/**/*',
-		]).pipe(gulp.dest('assets/templates/Stas/dist/fonts'));
-
-});
-
-gulp.task('deploy', function() {
-
-	var conn = ftp.create({
-		host:      'hostname.com',
-		user:      'username',
-		password:  'userpassword',
-		parallel:  10,
-		log: gutil.log
-	});
-
-	var globs = [
-	'assets/templates/Stas/dist/**',
-	'assets/templates/Stas/dist/.htaccess',
-	];
-	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/path/to/folder/on/server'));
-
-});
-
-gulp.task('removedist', function() { return del.sync('dist'); });
-gulp.task('clearcache', function () { return cache.clearAll(); });
-
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', 'sass']);

@@ -1,33 +1,30 @@
-$(function() {
+$(document).ready(function() {
+        // $.toast({
+        //     heading: 'Welcome to Elite admin',
+        //     text: 'Use the predefined ones, or specify a custom position object.',
+        //     position: 'top-right',
+        //     loaderBg: '#ff6849',
+        //     icon: 'info',
+        //     hideAfter: 3500,
 
-	$('#my-menu').mmenu({
-		extensions: [ 'widescreen', 'theme-white', 'effect-menu-slide', 'pagedim-black' ],
-		navbar: {
-			title: '<img src="assets/templates/Stas/app/img/logo-1.svg" alt="Салон красоты Смитлер">'
-		},
-		offCanvas: {
-			position  : 'left'
-		}
-	});
-
-	var api = $('#my-menu').data('mmenu');
-	api.bind('opened', function () {
-		$('.hamburger').addClass('is-active');
-	}).bind('closed', function () {
-		$('.hamburger').removeClass('is-active');
-	});
- // Bind to scroll
-    $(window).scroll(function () {
-
-       
-
-        if ($(this).scrollTop() > 10) {
-            $('.my_menu').addClass('fixed animated fadeInDown');
-        } else {
-            $('.my_menu').removeClass('fixed animated fadeInDown');
-        }
-
-        
+        //     stack: 6
+        // })
     });
+function testAnim(x) {
+        $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $(this).removeClass();
+        });
+    };
 
-	});
+    $(document).ready(function() {
+        $('.js--triggerAnimation').click(function(e) {
+            e.preventDefault();
+            var anim = $('.js--animations').val();
+            testAnim(anim);
+        });
+
+        $('.js--animations').change(function() {
+            var anim = $(this).val();
+            testAnim(anim);
+        });
+    });
