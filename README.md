@@ -5,3 +5,4 @@ bootstrap-switch.<br>
 buttons.<br>
 calendar.<br>
 cards.<br>
+chart-js.<br>
