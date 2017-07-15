@@ -7,3 +7,4 @@ calendar.<br>
 cards.<br>
 chart-js.<br>
 chat.<br>
+compose.<br>
