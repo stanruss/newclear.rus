@@ -11,3 +11,4 @@ compose.<br>
 contact.<br>
 custom-scroll.<br>
 data-table.<br>
+editable-table.<br>
