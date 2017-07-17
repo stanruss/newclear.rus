@@ -8,3 +8,4 @@ cards.<br>
 chart-js.<br>
 chat.<br>
 compose.<br>
+contact.<br>
