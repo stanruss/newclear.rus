@@ -14,3 +14,4 @@ data-table.<br>
 editable-table.<br>
 css-chart.<br>
 faq. <br>
+flot.<br>
