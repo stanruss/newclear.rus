@@ -15,3 +15,4 @@ editable-table.<br>
 css-chart.<br>
 faq. <br>
 flot.<br>
+font-awesome.<br>

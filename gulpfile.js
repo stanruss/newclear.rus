@@ -14,7 +14,7 @@ var browserSync  = require('browser-sync');
 gulp.task('browser-sync', function() {
 	browserSync({
 		proxy: 
-		"bootsrap4.loc",
+		"newclear.rus",
 		notify: false
 	
 	});
