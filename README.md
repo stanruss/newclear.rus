@@ -18,3 +18,4 @@ flot.<br>
 font-awesome.<br>
 foo-tables.<br>
 form-basic.<br>
+form-dropzone.<br>
