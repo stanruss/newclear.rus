@@ -20,3 +20,4 @@ foo-tables.<br>
 form-basic.<br>
 form-dropzone.<br>
 form-layout.<br>
+form-material-elements.<br>
